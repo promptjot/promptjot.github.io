@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import FeaturesSection from '../../components/FeaturesSection.astro';
+import { PromptManager } from '../../components/react/PromptManager';
+---
+
+<BaseLayout locale="de">
+  <HeroSection locale="de" />
+  <PromptManager client:load locale="de" />
+  <FeaturesSection locale="de" />
+</BaseLayout>

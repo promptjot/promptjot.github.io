@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-base: #FFF8CF;
+    --color-surface-base: #ffffff;
+    --color-border-base: #FBE6C2;
+    --color-text-primary: #173d0a;
+    --color-text-secondary: #527045;
+    --color-primary: #2A7C13;
+    --color-accent: #76C457;
+  }
+
+  .dark {
+    --color-bg-base: #0a1309;
+    --color-surface-base: #121e10;
+    --color-border-base: #233d1f;
+    --color-text-primary: #FFF8CF;
+    --color-text-secondary: #b3cca7;
+    --color-primary: #2A7C13;
+    --color-accent: #76C457;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    @apply bg-[#FFF8CF] text-[#173d0a] dark:bg-[#0a1309] dark:text-[#FFF8CF] min-h-screen selection:bg-[#76C457]/30 selection:text-[#2A7C13] dark:selection:bg-[#76C457]/40 dark:selection:text-[#FFF8CF];
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#FBE6C2] dark:bg-[#233d1f] rounded-full hover:bg-[#ebba73] dark:hover:bg-[#34592e];
+}
+
+/* Code & Prompt blocks */
+.prompt-code-font {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

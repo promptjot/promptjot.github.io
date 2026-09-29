@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import type { SupportedLocale } from '../i18n/translations';
+import { translations } from '../i18n/translations';
+import SEO from '../components/SEO.astro';
+import ThemeScript from '../components/ThemeScript.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  locale: SupportedLocale;
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const { locale } = Astro.props;
+const t = translations[locale] || translations.en;
+
+const pageTitle = Astro.props.title || t.meta.title;
+const pageDescription = Astro.props.description || t.meta.description;
+const pageKeywords = Astro.props.keywords || t.meta.keywords;
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-7QEDD333WQ"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7QEDD333WQ');
+    </script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#2A7C13" />
+    
+    <!-- Performance DNS Prefetches & Font Preloads -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+    <ThemeScript />
+    <SEO
+      locale={locale}
+      title={pageTitle}
+      description={pageDescription}
+      keywords={pageKeywords}
+    />
+  </head>
+  <body class="flex min-h-full flex-col bg-[#FFF8CF] text-[#173d0a] transition-colors duration-200 dark:bg-[#0a1309] dark:text-[#FFF8CF]">
+    <Navbar locale={locale} />
+    
+    <main class="flex-1" id="main-content">
+      <slot />
+    </main>
+
+    <Footer locale={locale} />
+  </body>
+</html>

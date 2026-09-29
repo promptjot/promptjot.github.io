@@ -1,0 +1,16 @@
+---
+// Inline script to prevent Theme Flash (FOUC) on initial page load
+---
+<script is:inline>
+  (function () {
+    try {
+      const storedTheme = localStorage.getItem('promptjot_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    } catch (_) {}
+  })();
+</script>

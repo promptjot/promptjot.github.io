@@ -1,0 +1,16 @@
+{
+  "name": "PromptJot | Free Local AI Prompt Library & Organizer",
+  "short_name": "PromptJot",
+  "description": "A 100% client-side, zero-server AI prompt management tool. Save, tag, search, and copy AI prompts instantly.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0b10",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

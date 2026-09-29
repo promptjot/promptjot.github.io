@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1309" />
+      <stop offset="50%" stop-color="#121e10" />
+      <stop offset="100%" stop-color="#0a1309" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A7C13" />
+      <stop offset="50%" stop-color="#43872a" />
+      <stop offset="100%" stop-color="#76C457" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)" />
+
+  <!-- Subtle glow circles -->
+  <circle cx="200" cy="150" r="300" fill="#2A7C13" opacity="0.18" filter="blur(80px)" />
+  <circle cx="1000" cy="450" r="350" fill="#76C457" opacity="0.12" filter="blur(90px)" />
+
+  <!-- App Card Preview Mockup -->
+  <g transform="translate(100, 100)">
+    <!-- Brand Icon -->
+    <rect width="80" height="80" rx="22" fill="url(#accent)" />
+    <path d="M22 52L40 34L22 16" stroke="#FFF8CF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <line x1="44" y1="56" x2="64" y2="56" stroke="#FFF8CF" stroke-width="6" stroke-linecap="round" />
+    <circle cx="62" cy="18" r="5" fill="#FBE6C2" />
+
+    <!-- Typography -->
+    <text x="110" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="48" font-weight="800" fill="#FFF8CF">
+      Prompt<tspan fill="#76C457">Jot</tspan>
+    </text>
+
+    <!-- Subtitle badge -->
+    <rect x="0" y="110" width="370" height="38" rx="19" fill="rgba(118, 196, 87, 0.15)" stroke="#76C457" stroke-width="1.5" />
+    <text x="24" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#FBE6C2">
+      100% Client-Side • Zero Cloud Storage
+    </text>
+
+    <!-- Main Title -->
+    <text x="0" y="215" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#FFF8CF" letter-spacing="-1">
+      Free Local AI Prompt Library
+    </text>
+    <text x="0" y="275" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="800" fill="#76C457" letter-spacing="-1">
+      &amp; Instant Organizer
+    </text>
+
+    <!-- Description -->
+    <text x="0" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#b3cca7">
+      Save, tag, search, and 1-click copy AI prompts for ChatGPT, Claude, and Midjourney.
+    </text>
+    <text x="0" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="400" fill="#b3cca7">
+      Absolute privacy on your local device. Free &amp; Open Source.
+    </text>
+
+    <!-- Badges -->
+    <g transform="translate(0, 425)">
+      <rect width="180" height="42" rx="12" fill="#121e10" stroke="#233d1f" stroke-width="1.5" />
+      <text x="25" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#FBE6C2">✓ 100% Private</text>
+      
+      <rect x="200" width="180" height="42" rx="12" fill="#121e10" stroke="#233d1f" stroke-width="1.5" />
+      <text x="225" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#76C457">⚡ &lt; 1ms Search</text>
+
+      <rect x="400" width="200" height="42" rx="12" fill="#121e10" stroke="#233d1f" stroke-width="1.5" />
+      <text x="425" y="27" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" fill="#FFF8CF">📁 JSON Export</text>
+    </g>
+  </g>
+</svg>
