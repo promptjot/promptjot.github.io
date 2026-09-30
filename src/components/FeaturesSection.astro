@@ -11,306 +11,90 @@ const t = translations[locale] || translations.en;
 const f = t.features;
 ---
 
-<section class="mt-20 border-t border-[#FBE6C2] bg-[#FBE6C2]/20 py-16 sm:py-24 dark:border-[#233d1f] dark:bg-[#091107]/40" id="features">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+<section class="mt-12 border-t border-[#FBE6C2]/80 pt-8 pb-10 dark:border-[#233d1f]/80" id="faq">
+  <div class="mx-auto max-w-4xl px-4 sm:px-6">
     
-    <!-- Section 1: Main Core Pillars -->
-    <div class="text-center max-w-3xl mx-auto">
-      <span class="inline-flex items-center gap-1.5 rounded-full border border-[#FBE6C2] bg-white px-3 py-1 text-xs font-semibold text-[#2A7C13] shadow-xs dark:border-[#233d1f] dark:bg-[#121e10] dark:text-[#FFF8CF]">
+    <!-- Minimalist Feature Badges -->
+    <div class="flex flex-wrap items-center justify-center gap-3 text-xs text-[#527045] dark:text-[#b3cca7] mb-8">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-[#FBE6C2] bg-white px-3 py-1 dark:border-[#233d1f] dark:bg-[#121e10]">
         <span class="h-1.5 w-1.5 rounded-full bg-[#76C457]"></span>
-        Zero-Server Local Architecture
+        100% Client-Side LocalStorage
       </span>
-      <h2 class="mt-3 text-2xl font-extrabold tracking-tight text-[#2A7C13] dark:text-[#FFF8CF] sm:text-4xl">
-        {f.heading}
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-[#FBE6C2] bg-white px-3 py-1 dark:border-[#233d1f] dark:bg-[#121e10]">
+        <span class="h-1.5 w-1.5 rounded-full bg-[#76C457]"></span>
+        Instant &lt; 1ms Copy
+      </span>
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-[#FBE6C2] bg-white px-3 py-1 dark:border-[#233d1f] dark:bg-[#121e10]">
+        <span class="h-1.5 w-1.5 rounded-full bg-[#76C457]"></span>
+        Full JSON Portability
+      </span>
+    </div>
+
+    <!-- Minimalist FAQ Accordion (Preserves FAQPage Schema for Search Engines) -->
+    <div class="max-w-2xl mx-auto space-y-2 text-xs">
+      <h2 class="text-center text-sm font-bold uppercase tracking-wider text-[#2A7C13] dark:text-[#FFF8CF] mb-4">
+        Frequently Asked Questions
       </h2>
-      <p class="mt-3 text-sm text-[#527045] dark:text-[#b3cca7] max-w-2xl mx-auto">
-        Designed from the ground up for prompt engineers, software developers, content architects, and AI power users who refuse to compromise on privacy or execution speed.
-      </p>
-    </div>
 
-    <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-      <!-- Pillar 1: Privacy -->
-      <article class="rounded-2xl border border-[#FBE6C2] bg-white p-7 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10] transition-transform hover:-translate-y-0.5">
-        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2A7C13]/10 text-[#2A7C13] dark:bg-[#76C457]/20 dark:text-[#76C457]">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-          </svg>
-        </div>
-        <h3 class="mt-5 text-lg font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-          {f.privateTitle}
-        </h3>
-        <p class="mt-2 text-xs leading-relaxed text-[#527045] dark:text-[#b3cca7]">
-          {f.privateDesc} All prompts remain safely stored within your browser's local sandbox. Zero cloud databases, zero cookies, and zero user telemetry.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>Where are my AI prompts stored in PromptJot?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          All your prompts are stored 100% locally in your web browser's HTML5 LocalStorage. Zero data is ever sent to external cloud servers, databases, or third-party analytics. Your prompts remain strictly private on your device.
         </p>
-      </article>
+      </details>
 
-      <!-- Pillar 2: Speed -->
-      <article class="rounded-2xl border border-[#FBE6C2] bg-white p-7 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10] transition-transform hover:-translate-y-0.5">
-        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#76C457]/20 text-[#2A7C13] dark:text-[#76C457]">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-          </svg>
-        </div>
-        <h3 class="mt-5 text-lg font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-          {f.fastTitle}
-        </h3>
-        <p class="mt-2 text-xs leading-relaxed text-[#527045] dark:text-[#b3cca7]">
-          {f.fastDesc} Instant in-memory search across titles, prompt text, and tags. 1-click clipboard transfer with animated feedback and keyboard shortcuts.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>Can PromptJot work offline without an internet connection?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          Yes! PromptJot is a completely client-side application. Once the page is loaded, all operations—creating, editing, searching, tagging, and copying prompts—run locally in your browser without requiring an active internet connection.
         </p>
-      </article>
+      </details>
 
-      <!-- Pillar 3: Portability -->
-      <article class="rounded-2xl border border-[#FBE6C2] bg-white p-7 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10] transition-transform hover:-translate-y-0.5">
-        <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-[#2A7C13]/10 text-[#2A7C13] dark:bg-[#FBE6C2]/15 dark:text-[#FFF8CF]">
-          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-        </div>
-        <h3 class="mt-5 text-lg font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-          {f.portableTitle}
-        </h3>
-        <p class="mt-2 text-xs leading-relaxed text-[#527045] dark:text-[#b3cca7]">
-          {f.portableDesc} Download full JSON backups in 1 click. Migrate or sync between your desktop, laptop, or mobile browser without any account friction.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>How do I backup or transfer my prompt library to another computer?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          Simply click the "Export JSON" button at the top of your Prompt Vault to download a clean, structured JSON backup file. On your other computer, open PromptJot and click "Import JSON" to merge or replace your prompts instantly with zero data loss.
         </p>
-      </article>
-    </div>
+      </details>
 
-    <!-- Section 2: Step-by-Step How It Works (Matches HowTo Schema) -->
-    <div class="mt-20 border-t border-[#FBE6C2]/80 pt-16 dark:border-[#233d1f]/80">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold tracking-tight text-[#2A7C13] dark:text-[#FFF8CF] sm:text-3xl">
-          How PromptJot Streamlines Your AI Workflow
-        </h2>
-        <p class="mt-2 text-xs text-[#527045] dark:text-[#b3cca7]">
-          Four simple steps to absolute prompt mastery, zero-latency search, and instant reuse.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>Does PromptJot support ChatGPT, Claude, and Midjourney prompt templates?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          Yes. PromptJot supports prompts for all modern AI models including OpenAI ChatGPT (GPT-4o, o1), Anthropic Claude (Claude 3.5 Sonnet), Midjourney v6, Flux.1, Google Gemini, and Cursor AI. It also highlights template placeholders like <code class="font-mono text-[#2A7C13] dark:text-[#76C457]">&#123;&#123;VARIABLE&#125;&#125;</code> or <code class="font-mono text-[#2A7C13] dark:text-[#76C457]">[VARIABLE]</code> for easy customization.
         </p>
-      </div>
+      </details>
 
-      <ol class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <li class="relative rounded-2xl border border-[#FBE6C2] bg-white p-6 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2A7C13] text-xs font-bold text-[#FFF8CF]">
-            1
-          </div>
-          <h3 class="mt-4 text-sm font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-            Capture Your Prompts
-          </h3>
-          <p class="mt-1.5 text-xs text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Click "New Prompt" or hit <kbd class="px-1 py-0.5 rounded border border-[#FBE6C2] dark:border-[#233d1f] font-mono text-[10px]">N</kbd>. Add titles, instructions, and template variables like <code class="font-mono text-[11px] text-[#2A7C13] dark:text-[#76C457]">&#123;&#123;TOPIC&#125;&#125;</code>.
-          </p>
-        </li>
-
-        <li class="relative rounded-2xl border border-[#FBE6C2] bg-white p-6 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2A7C13] text-xs font-bold text-[#FFF8CF]">
-            2
-          </div>
-          <h3 class="mt-4 text-sm font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-            Organize with Tags
-          </h3>
-          <p class="mt-1.5 text-xs text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Tag prompts by project, tool, or workflow (e.g., <span class="font-medium text-[#2A7C13] dark:text-[#76C457]">#Coding</span>, <span class="font-medium text-[#2A7C13] dark:text-[#76C457]">#Midjourney</span>, <span class="font-medium text-[#2A7C13] dark:text-[#76C457]">#SEO</span>) for 1-click filtering.
-          </p>
-        </li>
-
-        <li class="relative rounded-2xl border border-[#FBE6C2] bg-white p-6 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#2A7C13] text-xs font-bold text-[#FFF8CF]">
-            3
-          </div>
-          <h3 class="mt-4 text-sm font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-            Instant Search
-          </h3>
-          <p class="mt-1.5 text-xs text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Press <kbd class="px-1 py-0.5 rounded border border-[#FBE6C2] dark:border-[#233d1f] font-mono text-[10px]">/</kbd> or <kbd class="px-1 py-0.5 rounded border border-[#FBE6C2] dark:border-[#233d1f] font-mono text-[10px]">Ctrl+K</kbd> to instantly search titles and full prompt text in under 1ms.
-          </p>
-        </li>
-
-        <li class="relative rounded-2xl border border-[#FBE6C2] bg-white p-6 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-[#76C457] text-xs font-bold text-[#0a1309]">
-            4
-          </div>
-          <h3 class="mt-4 text-sm font-bold text-[#2A7C13] dark:text-[#FFF8CF]">
-            1-Click Copy
-          </h3>
-          <p class="mt-1.5 text-xs text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Copy prompt templates directly to your clipboard with visual checkmarks and usage tracking. Paste and run in your favourite LLM.
-          </p>
-        </li>
-      </ol>
-    </div>
-
-    <!-- Section 3: Semantic Comparison Table (SEO Superiority Signal) -->
-    <div class="mt-20 border-t border-[#FBE6C2]/80 pt-16 dark:border-[#233d1f]/80">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold tracking-tight text-[#2A7C13] dark:text-[#FFF8CF] sm:text-3xl">
-          PromptJot vs Traditional Cloud Prompt Managers
-        </h2>
-        <p class="mt-2 text-xs text-[#527045] dark:text-[#b3cca7]">
-          Why thousands of developers and AI architects switch to client-side prompt management.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>Is PromptJot completely free and open-source?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          Yes, PromptJot is 100% free and open-source under the permissive MIT License. There are no paid tiers, subscriptions, paywalls, or locked features.
         </p>
-      </div>
+      </details>
 
-      <div class="mt-8 overflow-x-auto rounded-2xl border border-[#FBE6C2] bg-white shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-        <table class="w-full text-left text-xs text-[#173d0a] dark:text-[#FFF8CF]">
-          <thead class="border-b border-[#FBE6C2] bg-[#FBE6C2]/40 text-[11px] font-bold uppercase tracking-wider text-[#2A7C13] dark:border-[#233d1f] dark:bg-[#1a2b17] dark:text-[#FFF8CF]">
-            <tr>
-              <th scope="col" class="py-3.5 px-4 sm:px-6">Feature / Capability</th>
-              <th scope="col" class="py-3.5 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">PromptJot (Local-First)</th>
-              <th scope="col" class="py-3.5 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Cloud Prompt SaaS</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-[#FBE6C2]/60 dark:divide-[#233d1f]/60 font-medium">
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Storage Architecture</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">100% Client-Side LocalStorage</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Centralized Cloud Database</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Account &amp; Registration</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">None. Instant Access</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Required (Email / OAuth)</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Confidential Prompt Privacy</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">Strictly on device. Zero tracking</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Stored on third-party servers</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Search Latency</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">&lt; 1ms (Instant in-memory)</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">300ms – 1200ms (Network API)</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Offline Availability</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">Works 100% offline</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Fails without active connection</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Backup &amp; Migration</td>
-              <td class="py-3 px-4 sm:px-6 text-[#2A7C13] dark:text-[#76C457]">1-Click JSON Export &amp; Import</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">Proprietary lock-in / Paid exports</td>
-            </tr>
-            <tr class="hover:bg-[#FFF8CF]/40 dark:hover:bg-[#162514]/40">
-              <td class="py-3 px-4 sm:px-6 font-semibold">Cost</td>
-              <td class="py-3 px-4 sm:px-6 font-bold text-[#2A7C13] dark:text-[#76C457]">Free &amp; Open Source (MIT)</td>
-              <td class="py-3 px-4 sm:px-6 text-[#7c5850] dark:text-[#b3cca7]">$8 - $29 / month recurring</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- Section 4: Supported AI Models Hub (Keyword Richness for Search Engines) -->
-    <div class="mt-20 border-t border-[#FBE6C2]/80 pt-16 dark:border-[#233d1f]/80">
-      <div class="text-center max-w-2xl mx-auto">
-        <h2 class="text-2xl font-bold tracking-tight text-[#2A7C13] dark:text-[#FFF8CF] sm:text-3xl">
-          Universal Compatibility with Any AI Model
-        </h2>
-        <p class="mt-2 text-xs text-[#527045] dark:text-[#b3cca7]">
-          PromptJot formats and stores system prompts, few-shot prompts, and templates across all frontier LLMs and generative tools.
+      <details class="group rounded-xl border border-[#FBE6C2] bg-white p-3 dark:border-[#233d1f] dark:bg-[#121e10] transition-colors">
+        <summary class="flex cursor-pointer items-center justify-between font-medium text-[#2A7C13] dark:text-[#FFF8CF]">
+          <span>How does PromptJot compare to cloud-based prompt managers?</span>
+          <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▾</span>
+        </summary>
+        <p class="mt-2 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
+          Unlike cloud prompt tools that require user accounts and store your proprietary intellectual property on their servers, PromptJot offers zero tracking, sub-millisecond local search speed, total data ownership via JSON, and works completely offline.
         </p>
-      </div>
-
-      <div class="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6 text-center text-xs">
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">OpenAI ChatGPT</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">GPT-4o, o1, o3-mini</span>
-        </div>
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">Anthropic Claude</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">Claude 3.5 Sonnet, Opus</span>
-        </div>
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">Midjourney &amp; Flux</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">v6, Flux.1, Raw Prompts</span>
-        </div>
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">Google Gemini</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">Gemini 1.5 Pro, Flash</span>
-        </div>
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">Coding AI</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">Cursor, Copilot, Windsurf</span>
-        </div>
-        <div class="rounded-xl border border-[#FBE6C2] bg-white p-3.5 shadow-xs dark:border-[#233d1f] dark:bg-[#121e10]">
-          <strong class="block font-bold text-[#2A7C13] dark:text-[#FFF8CF]">DeepSeek</strong>
-          <span class="text-[10px] text-[#527045] dark:text-[#b3cca7]">R1, V3 Reasoning</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Section 5: Rich FAQ Accordion (Mirrors FAQPage Schema Exactly) -->
-    <div class="mt-20 border-t border-[#FBE6C2]/80 pt-16 dark:border-[#233d1f]/80 max-w-3xl mx-auto">
-      <div class="text-center mb-8">
-        <h2 class="text-2xl font-bold tracking-tight text-[#2A7C13] dark:text-[#FFF8CF] sm:text-3xl">
-          Frequently Asked Questions
-        </h2>
-        <p class="mt-2 text-xs text-[#527045] dark:text-[#b3cca7]">
-          Clear answers regarding privacy, data retention, offline capabilities, and migration.
-        </p>
-      </div>
-
-      <div class="space-y-4 text-xs">
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>Where are my AI prompts stored in PromptJot?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            All your prompts are stored 100% locally in your web browser's HTML5 LocalStorage. Zero data is ever sent to external cloud servers, databases, or third-party analytics. Your prompts remain strictly private on your device.
-          </p>
-        </details>
-
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>Can PromptJot work offline without an internet connection?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Yes! PromptJot is a completely client-side application. Once the page is loaded, all operations—creating, editing, searching, tagging, and copying prompts—run locally in your browser without requiring an active internet connection.
-          </p>
-        </details>
-
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>How do I backup or transfer my prompt library to another computer?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Simply click the "Export JSON" button at the top of your Prompt Vault to download a clean, structured JSON backup file. On your other computer, open PromptJot and click "Import JSON" to merge or replace your prompts instantly with zero data loss.
-          </p>
-        </details>
-
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>Does PromptJot support ChatGPT, Claude, and Midjourney prompt templates?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Yes. PromptJot supports prompts for all modern AI models including OpenAI ChatGPT (GPT-4o, o1), Anthropic Claude (Claude 3.5 Sonnet), Midjourney v6, Flux.1, Google Gemini, and Cursor AI. It also highlights template placeholders like <code class="font-mono text-[#2A7C13] dark:text-[#76C457]">&#123;&#123;VARIABLE&#125;&#125;</code> or <code class="font-mono text-[#2A7C13] dark:text-[#76C457]">[VARIABLE]</code> for easy customization.
-          </p>
-        </details>
-
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>Is PromptJot completely free and open-source?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Yes, PromptJot is 100% free and open-source under the permissive MIT License. There are no paid tiers, subscriptions, paywalls, or locked features.
-          </p>
-        </details>
-
-        <details class="group rounded-2xl border border-[#FBE6C2] bg-white p-4.5 dark:border-[#233d1f] dark:bg-[#121e10]">
-          <summary class="flex cursor-pointer items-center justify-between font-semibold text-sm text-[#2A7C13] dark:text-[#FFF8CF]">
-            <span>How does PromptJot compare to cloud-based prompt managers?</span>
-            <span class="transition-transform group-open:rotate-180 text-[#76C457] ml-2">▼</span>
-          </summary>
-          <p class="mt-2.5 text-[#527045] dark:text-[#b3cca7] leading-relaxed">
-            Unlike cloud prompt tools that require user accounts and store your proprietary intellectual property on their servers, PromptJot offers zero tracking, sub-millisecond local search speed, total data ownership via JSON, and works completely offline.
-          </p>
-        </details>
-      </div>
+      </details>
     </div>
 
   </div>
